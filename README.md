@@ -66,10 +66,10 @@ mysql -u root -p
 
 
 ## Build
-express.js
-node.js
-handlebars.js
-MySQL Database
+express.js\
+node.js\
+handlebars.js\
+MySQL Database\
 SQL ORM
 
 
