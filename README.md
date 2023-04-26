@@ -40,10 +40,10 @@ Homepage - \
 
 
 ## Contributors
-Tiffany's GitHub - [Trengland](https://www.github.com/Trengland/)
-Malachi's GitHub - [malachigamblin](https://www.github.com/malachigamblin/)
-Nelson's GitHub - [MoxUFO](https://www.github.com/MoxUFO/)
-Melena's GitHub - [melenagrilliot](https://www.github.com/melenagrilliot/)
+Tiffany's GitHub - [Trengland](https://www.github.com/Trengland/)\
+Malachi's GitHub - [malachigamblin](https://www.github.com/malachigamblin/)\
+Nelson's GitHub - [MoxUFO](https://www.github.com/MoxUFO/)\
+Melena's GitHub - [melenagrilliot](https://www.github.com/melenagrilliot/)\
 Brian's GitHub - TBD
 
 
