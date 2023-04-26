@@ -1,6 +1,6 @@
 ## Project Name
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)\
-TEAM 3:
+TEAM 3:\
 Nelson Foster\
 Malachi Gamblin\
 Melena Grilliot\
