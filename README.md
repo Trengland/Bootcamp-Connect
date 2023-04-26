@@ -1,6 +1,11 @@
-## Team 3 - Project 2
+## Project Name
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)\
-TEAM - Nelson, Malachi, Melena, Brian, Tiffany
+TEAM 3 -\
+Nelson\
+Malachi\
+Melena\
+Brian\
+Tiffany
 
 
 ## Screen Recording:
