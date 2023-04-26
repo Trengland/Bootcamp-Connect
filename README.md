@@ -1,14 +1,21 @@
 ## Team 3 - Project 2
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+TEAM - Nelson, Malachi, Melena, Brian, Tiffany
 
 
-## Screen Recording + Image of application walk-through:
+## Screen Recording:
+TBD
 
+## Image of application walk-through:
+TBD
+
+## LIVE URL:
+TBD
 
 
 ## Table of Contents
-
 * [Description](#description)
+* [Usage](#usage)
 * [Contributors](#contributors)
 * [Installation](#installation)
 * [Tests](#tests)
@@ -17,11 +24,15 @@
 
 
 ## Description
-
 TBD
 
-## Contributors
 
+## Usage
+Homepage - 
+2nd Page? - 
+
+
+## Contributors
 Malachi, Melena, Nelson, Brian, Tiffany
 
 
@@ -53,12 +64,10 @@ mysql -u root -p
 
 
 ## License
-    
 This Project is Licensed under the MIT license.
 
 
 ## Questions
-
 For any questions about this project, contact the team:
 [Trengland](https://www.github.com/Trengland/)
 
