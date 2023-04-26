@@ -21,7 +21,6 @@ TBD
 * [Tests](#tests)
 * [Build](#build)
 * [License](#license)
-* [Questions](#questions)
 
 
 ## Description
@@ -29,11 +28,13 @@ TBD
 
 
 ## Usage
-Homepage - 
+Homepage - \
 2nd Page? - 
 
 
 ## Contributors
+[Trengland](https://www.github.com/Trengland/)\
+
 Malachi, Melena, Nelson, Brian, Tiffany
 
 
@@ -75,11 +76,6 @@ SQL ORM
 
 ## License
 This Project is Licensed under the MIT license.
-
-
-## Questions
-For any questions about this project, contact the team:
-[Trengland](https://www.github.com/Trengland/)
 
 
 
