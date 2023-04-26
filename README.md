@@ -33,7 +33,7 @@ Homepage - \
 
 
 ## Contributors
-[Trengland](https://www.github.com/Trengland/)\
+[Trengland](https://www.github.com/Trengland/)
 
 Malachi, Melena, Nelson, Brian, Tiffany
 
