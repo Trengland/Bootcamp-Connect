@@ -1,0 +1,19 @@
+{
+  "name": "bootcamp-jamz",
+  "version": "1.0.0",
+  "description": "![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)\\ TEAM 3:\\ Nelson Foster\\ Malachi Gamblin\\ Melena Grilliot\\ Brian Williams\\ Tiffany England",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "handlebars": "^4.7.7",
+    "mysql2": "^3.2.4"
+  }
+}
