@@ -53,7 +53,12 @@ To install necessary dependencies, run the following command:
 
 ```
 npm install express
-
+```
+```
+npm install mysql2
+```
+```
+npm install handlebars
 ```
 
 
@@ -63,7 +68,11 @@ To perform tests, run the following command:
 
 ```
 npm run seed
+```
+```
 npm run start
+```
+```
 node server
 ```
 
