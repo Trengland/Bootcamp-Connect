@@ -98,7 +98,6 @@ This Project is Licensed under the MIT license.
 
 
 ## Project Requirements:
-You and your team will design and build an app using the MVC paradigm, create your own server-side API, add user authentication, and connect to a database.
 
 ![image](https://user-images.githubusercontent.com/122329399/234438085-0bc1e512-b48a-4754-af66-3ccb94e7a58f.png)
 
