@@ -44,7 +44,7 @@ Tiffany's GitHub - [Trengland](https://www.github.com/Trengland/)\
 Malachi's GitHub - [malachigamblin](https://www.github.com/malachigamblin/)\
 Nelson's GitHub - [MoxUFO](https://www.github.com/MoxUFO/)\
 Melena's GitHub - [melenagrilliot](https://www.github.com/melenagrilliot/)\
-Brian's GitHub - TBD
+Brian's GitHub - [briancwilliams18](https://www.github.com/briancwilliams18/)
 
 
 ## Installation
@@ -98,6 +98,8 @@ This Project is Licensed under the MIT license.
 
 
 ## Project Requirements:
+You and your team will design and build an app using the MVC paradigm, create your own server-side API, add user authentication, and connect to a database.
+
 ![image](https://user-images.githubusercontent.com/122329399/234438085-0bc1e512-b48a-4754-af66-3ccb94e7a58f.png)
 
 ![image](https://user-images.githubusercontent.com/122329399/234438124-5b6ecd22-c82e-4561-a8c6-daff2616fe43.png)
