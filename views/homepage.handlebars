@@ -1,0 +1,11 @@
+{{!-- This template uses Handlebars syntax to conditionally display different content depending on whether the user is logged in or not --}}
+
+{{#if loggedIn}}
+  <p>Welcome, {{username}}! You're succesfully logged in.</p>
+  <p><a href="/api/playlists">Create a New Playlist</a></p>
+  <p><a href="/api/users/logout">Log Out</a></p>
+{{else}}
+  <p>Welcome to the Bootcamp Jamz! Please log in or create a new account to get started.</p>
+  <p><a href="/api/users/login">Log In</a></p>
+  <p><a href="/api/users/signup">Create Account</a></p>
+{{/if}}
