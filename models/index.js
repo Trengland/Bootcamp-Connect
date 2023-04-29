@@ -3,9 +3,7 @@ const Playlist = require("./Playlist");
 const Songs = require("./Songs");
 const PlaylistSong = require("./PlaylistSong");
 
-User.hasMany(Playlist, {
-  foreignKey: "user_id",
-});
+User.hasMany(Playlist);
 Playlist.belongsTo(User, {
   foreignKey: "user_id",
 });

@@ -1,27 +1,27 @@
 
-const { Song } = require('../models');
+const { Songs } = require('../models');
 
 const songData = [
   {
-    "title": "The Search",
-    "Artist": "NF",
-    "Genre": "hip-hop",
-    "Album": "The Search"
+    title: "The Search",
+    artist: "NF",
+    genre: "hip-hop",
+    album: "The Search"
   },
   {
-    "title": "The Sound of Silence",
-    "Artist": "Disturbed",
-    "Genre": "Rock",
-    "Album": "Immortalized(Deluxe Edition)"
+    title: "The Sound of Silence",
+    artist: "Disturbed",
+    genre: "Rock",
+    album: "Immortalized(Deluxe Edition)"
   },
   {
-    "title": "Set Fire to the Rain",
-    "Artist": "Adele",
-    "Genre": "Pop Soul",
-    "Album": "21"
+    title: "Set Fire to the Rain",
+    artist: "Adele",
+    genre: "Pop Soul",
+    album: "21"
   }
 ] 
 
-const seedSongs = () => Song.bulkCreate(SongData);
+const seedSongs = () => Songs.bulkCreate(songData);
 
 module.exports = seedSongs;
