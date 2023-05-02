@@ -1,20 +1,14 @@
 const User = require("./User");
-const Playlist = require("./Playlist");
-const Songs = require("./Songs");
-const PlaylistSong = require("./PlaylistSong");
+const Bio = require("./bio");
 
-User.hasMany(Playlist);
-Playlist.belongsTo(User, {
-  foreignKey: "user_id",
+// Define associations between models
+User.hasOne(Bio, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
-Playlist.belongsToMany(Songs, {
-  through: PlaylistSong,
-  foreignKey: "playlist_id",
-});
-Songs.belongsToMany(Playlist, {
-  through: PlaylistSong,
-  foreignKey: "song_id",
+Bio.belongsTo(User, {
+  foreignKey: 'user_id'
 });
 
-module.exports = { Playlist, PlaylistSong, Songs, User };
+module.exports = { User, Bio };
