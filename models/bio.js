@@ -51,7 +51,7 @@ Bio.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "playlist",
+    modelName: "bio",
   }
 );
 
