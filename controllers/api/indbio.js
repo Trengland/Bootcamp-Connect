@@ -2,19 +2,19 @@ const { Playlist, User } = require('../models');
 const { requireAuth } = require('../middleware/auth');
 
 
-// get User from db who is creating the playlist
+// get User from db
 router.get('/', requireAuth, async (req, res) => {
   try {
     const user = await User.findByPk(req.session.user_id, {
       include: [
         {
-          model: Playlist,
-          as: 'playlists',
-          attributes: ['id', 'name', 'createdAt'],
-          include: ['songs'],
+          model: Playlist, // should this be indBio now?
+          as: 'playlists', // should this be as: 'bio' OR as: 'indBio'?
+          attributes: ['id', 'name', 'createdAt'], // do we still need createdAt?
+          include: ['songs'], //is this where i will include quote, movies_shows, birthday, hobbies, etc.?
         },
       ],
-      attributes: ['id', 'username', 'email'],
+      attributes: ['id', 'username', 'email'], // do we need username AND email? or just username?
     });
 
     if (!user) {
@@ -30,6 +30,7 @@ router.get('/', requireAuth, async (req, res) => {
 
 
 //post to save the song and artist input to the database
+// do i now need to include the other things being posted to the db here? (hobbiers, quote, birthday, songs, etc.?)
 router.post('/add-song', requireAuth, async (req, res) => {
     try {
       const { playlistId, songName, artistName } = req.body;
