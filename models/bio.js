@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Playlist extends Model {}
+class Bio extends Model {}
 
-Playlist.init(
+Bio.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,16 +11,40 @@ Playlist.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    favorite_movies_or_tv_shows: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    favorite_songs: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    zodiac_sign: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    favorite_hobby: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    favorite_quote: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    linkedin: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    github: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
       },
-    },
-    playlist_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
   },
   {
@@ -31,4 +55,4 @@ Playlist.init(
   }
 );
 
-module.exports = Playlist;
+module.exports = Bio;
