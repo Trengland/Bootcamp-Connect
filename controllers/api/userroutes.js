@@ -24,7 +24,6 @@ const { Users } = require('../../models');
   });
 
 
-
 //login for existing user
 router.post('/login', async (req, res) => {
     try {
