@@ -1,3 +1,6 @@
+const User = require("./User");
+const Bio = require("./bio");
+
 // Define associations between models
 User.hasOne(Bio, {
   foreignKey: 'user_id',
