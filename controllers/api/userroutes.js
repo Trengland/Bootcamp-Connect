@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+
 // Import your models here
-const User = require('../models/user');
+const User = require('../../models/user');
 
 // Route for displaying the registration page
 router.get('/register', (req, res) => {
