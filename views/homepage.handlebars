@@ -2,10 +2,14 @@
 
 {{#if loggedIn}}
   <p>Welcome, {{username}}! You're succesfully logged in.</p>
-  <p><a href="/api/playlists">Create a New Playlist</a></p>
+  <p><a href="/api/indbio">Create a Personal BIO to help your classmates get to now you better!</a></p>
   <p><a href="/api/users/logout">Log Out</a></p>
 {{else}}
-  <p>Welcome to the Bootcamp Jamz! Please log in or create a new account to get started.</p>
+  <p>Welcome to the Bootcamp Connect!</p> 
+  <p>Please log in or create a new account to get started.</p>
+  <br> <br>
   <p><a href="/api/users/login">Log In</a></p>
+  <br>
   <p><a href="/api/users/signup">Create Account</a></p>
 {{/if}}
+
