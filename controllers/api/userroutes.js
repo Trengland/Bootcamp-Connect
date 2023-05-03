@@ -1,65 +1,66 @@
-const router = require('express').Router();
-const { Users } = require('../../models');
+const express = require('express');
+const router = express.Router();
 
+// Import your models here
+const User = require('../models/user');
 
- //create a new user/account
- router.post('/', async (req, res) => {
-    try {
-      const { username, email, password } = req.body; // do i only need Username here since it IS the email?
-      const userData = await User.create({ username, email, password }); // do i include all details here? (birthday, movies, hobbies, etc.?)
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-      req.session.save(() => {
-        res.status(201).json({
-          message: 'Account Created Successfully',
-          user: userData
-        });
-      });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({
-        error: 'There was an error while creating the account'
-      });
-    }
-  });
+// Route for displaying the registration page
+router.get('/register', (req, res) => {
+  res.render('register', { title: 'Register' });
+});
 
+// Route for handling user registration
+router.post('/register', async (req, res) => {
+  try {
+    // Create a new user based on the form data
+    const user = new User({
+      username: req.body.username,
+      password: req.body.password,
+    });
 
-//login for existing user
+    // Save the user to the database
+    await user.save();
+
+    // Set session variable
+    req.session.userId = user._id;
+
+    // Redirect the user to the bio form
+    res.redirect('/bio');
+  } catch (error) {
+    console.log(error);
+    res.render('register', { title: 'Register', error: error });
+  }
+});
+
+// Route for displaying the login page
+router.get('/login', (req, res) => {
+  res.render('login', { title: 'Log In' });
+});
+
+// Route for handling user login
 router.post('/login', async (req, res) => {
-    try {
-      const { email, password } = req.body; // username instead of email?
-      const userData = await User.findOne({ where: { email } });
-  
-      if (!userData) {
-        return res.status(401).json({ error: 'Invalid username or password' });
-      }
-  
-      const isValidPassword = await userData.checkPassword(password);
-  
-      if (!isValidPassword) {
-        return res.status(401).json({ error: 'Invalid username or password' });
-      }
-  
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-      req.session.save(() => {
-        res.status(200).json({ message: 'Login successful' });
-      });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal server error' });
-    }
-  });
-  
+  try {
+    const user = await User.findOne({ username: req.body.username });
 
-
- //log out
- router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
-      req.session.destroy(() => {
-        res.status(200).json({ message: 'Logged Out. Come Back Soon!' });
-      });
-    } else {
-      res.status(401).json({ error: 'You are not logged in' });
+    // Check if user exists
+    if (!user) {
+      throw new Error('User not found');
     }
-  });
+
+    // Check if password is correct
+    if (user.password !== req.body.password) {
+      throw new Error('Incorrect password');
+    }
+
+    // Set session variable
+    req.session.userId = user._id;
+
+    // Redirect the user to their profile page
+    res.redirect('/profile');
+  } catch (error) {
+    console.log(error);
+    res.render('login', { title: 'Log In', error: error });
+  }
+});
+
+module.exports = router;

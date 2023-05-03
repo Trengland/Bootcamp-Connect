@@ -1,55 +1,65 @@
-const { Playlist, User } = require('../models');
-const { requireAuth } = require('../middleware/auth');
+const express = require('express');
+const router = express.Router();
 
+// Import your models here
+const Bio = require('../../models/bio');
 
-// get User from db
-router.get('/', requireAuth, async (req, res) => {
+// Route for getting a user's bio
+router.get('/bio', async (req, res) => {
   try {
-    const user = await User.findByPk(req.session.user_id, {
-      include: [
-        {
-          model: Playlist, // should this be indBio now?
-          as: 'playlists', // should this be as: 'bio' OR as: 'indBio'?
-          attributes: ['id', 'name', 'createdAt'], // do we still need createdAt?
-          include: ['songs'], //is this where i will include quote, movies_shows, birthday, hobbies, etc.?
-        },
-      ],
-      attributes: ['id', 'username', 'email'], // do we need username AND email? or just username?
-    });
+    // Find the bio for the current user
+    const bio = await Bio.findOne({ user: req.user._id });
 
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    res.status(200).json({ user });
+    // Return the bio data as JSON
+    res.json(bio);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.log(error);
+    res.status(500).json({ message: 'Error getting bio data' });
   }
 });
 
+// Route for updating a user's bio
+router.put('/bio', async (req, res) => {
+  try {
+    // Find the bio for the current user
+    const bio = await Bio.findOne({ user: req.user._id });
 
-//post to save the song and artist input to the database
-// do i now need to include the other things being posted to the db here? (hobbiers, quote, birthday, songs, etc.?)
-router.post('/add-song', requireAuth, async (req, res) => {
-    try {
-      const { playlistId, songName, artistName } = req.body;
-  
-      const playlist = await Playlist.findByPk(playlistId);
-  
-      if (!playlist) {
-        return res.status(404).json({ error: 'Playlist not found' });
-      }
-  
-      const song = await Song.create({
-        name: songName,
-        artist: artistName,
-        playlistId: playlist.id,
-      });
-  
-      res.status(201).json({ song });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal server error' });
-    }
-  });
+    // Update the bio fields based on the request body
+    bio.user_id = req.body.user_id;
+    bio.zodiac_sign = req.body.zodiac_sign;
+    bio.favorite_quote = req.body.favorite_quote;
+    bio.linkedin = req.body.linkedin;
+    bio.github = req.body.github;
+    bio.favorite_movies_or_tv_shows = req.body.favorite_movies_or_tv_shows;
+    bio.favorite_songs = req.body.favorite_songs;
+    bio.favorite_hobby = req.body.favorite_hobby;
+
+    // Save the updated bio to the database
+    await bio.save();
+
+    // Return the updated bio data as JSON
+    res.json(bio);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Error creating your personal bio' });
+  }
+});
+
+// Route for deleting a user's bio
+router.delete('/bio', async (req, res) => {
+  try {
+    // Find the bio for the current user
+    const bio = await Bio.findOne({ user: req.user._id });
+
+    // Delete the bio from the database
+    await bio.delete();
+
+    // Return a success message as JSON
+    res.json({ message: 'Bio deleted successfully' });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Error deleting bio data' });
+  }
+});
+
+module.exports = router;
