@@ -1,7 +1,8 @@
-const seedPlaylist = require('./playlistData');
-const seedSongs = require('./songData');
+const seedBio = require('./bioData');
+const seedComments  = require('./commentData');
 const seedUser = require('./userData');
-const seedPlaylistSong = require('./playlist-song');
+
+
 
 const sequelize = require('../config/connection');
 
@@ -10,15 +11,10 @@ const seedAll = async () => {
   console.log('\n----- DATABASE SYNCED -----\n');
   await seedUser();
   console.log('\n----- USER SEEDED -----\n');
-
-  await seedPlaylist();
-  console.log('\n----- PLAYLIST SEEDED -----\n');
-
-  await seedSongs();
-  console.log('\n----- SONGS SEEDED -----\n');
-
-  await seedPlaylistSong();
-  console.log('\n----- PLAYLIST SONG SEEDED -----\n');
+  await seedBio();
+  console.log('\n----- BIO SEEDED -----\n');
+  await seedComments();
+  console.log('\n----- COMMENTS SEEDED -----\n');
 
   process.exit(0);
 };

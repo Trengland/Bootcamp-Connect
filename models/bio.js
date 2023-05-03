@@ -19,7 +19,7 @@ Bio.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    zodiac_sign: {
+    birth_day: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -29,11 +29,11 @@ Bio.init(
     },
     favorite_quote: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     linkedin: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     github: {
       type: DataTypes.STRING,
