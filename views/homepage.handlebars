@@ -1,5 +1,36 @@
 {{!-- This template uses Handlebars syntax to conditionally display different content depending on whether the user is logged in or not --}}
 
+
+
+<header>
+
+			<div id="title">
+			</div>
+
+			<div id="logo">
+				<img src="logotwo.png"/>
+			</div>
+			
+		</header>
+
+		<div class="about">
+			Bootcamp Connect is a virtual site made to help you connect with your bootcamp classmates!
+		</div>
+	
+		<main class="mainCenter">
+
+		        <div>
+		            <a href="login.html" class="btn btn-primary">Login</a>
+		            <a href="signup.html" class="btn btn-primary">Create Account</a>
+		        </div>
+	 
+		</main>
+		
+
+
+
+
+
 {{#if loggedIn}}
   <p>Welcome, {{username}}! You're succesfully logged in.</p>
   <p><a href="/api/indbio">Create a Personal BIO to help your classmates get to now you better!</a></p>
