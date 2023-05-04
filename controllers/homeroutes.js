@@ -53,4 +53,16 @@ router.get('/bios', async (req, res) => {
   }
 });
 
+router.get("/", async (req, res)=> {
+  console.log("render homepage")
+  res.render("homepage")
+})
+
+router.get("/feed", async (req, res)=> {
+  console.log("render homepage")
+  res.render("feed")
+})
+
+
+
 module.exports = router;
