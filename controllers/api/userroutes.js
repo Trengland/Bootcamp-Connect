@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // Import your models here
 const User = require('../../models/user');
 
