@@ -1,0 +1,66 @@
+.home main{
+   
+    border: solid thin rgba(242, 232, 219,);
+}
+.home main .row{
+    height: 80vh;
+}
+
+.mainCenter{
+    height: 80vh;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainCenter > div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+header{
+    background-color: rgb(242, 232, 219);
+    padding: 20px;
+    text-align: center;
+}
+.about{
+    background-color: rgb(153, 194, 190);
+    padding: 20px;
+    text-align: center;
+    font-family: fantasy;
+}
+
+footer{
+    background-color: rgb(153, 194, 190);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+nav a{
+    text-decoration: none;
+
+}
+
+.profile{
+    max-width: 100px;
+}
+.postBox{
+    display: flex;
+    gap: 20px;
+}
+.card{
+    padding: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 500px;
+    overflow-y: scroll;
+    
+}
