@@ -37,6 +37,9 @@ router.post('/register', async (req, res) => {
 router.get('/login', (req, res) => {
   res.render('login', { title: 'Log In' });
 });
+router.get('/signup', (req, res) => {
+  res.render('signup', { title: 'Log In' });
+});
 
 // Route for handling user login
 router.post('/login', async (req, res) => {
