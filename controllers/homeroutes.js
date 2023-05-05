@@ -10,7 +10,7 @@ router.get('/bio', (req, res) => {
   res.render('bio', { title: 'Create Your Bio' });
 });
 
-// Route for handling the bio form submission
+// Route for handling the bio form submission.
 router.post('/bio', async (req, res) => {
   try {
     // Find the user by their ID
