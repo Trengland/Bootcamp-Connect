@@ -10,7 +10,7 @@ router.get('/register', (req, res) => {
   res.render('register', { title: 'Register' });
 });
 
-// Route for handling user registration
+// Route for handling user registration.
 router.post('/register', async (req, res) => {
   try {
     // Create a new user based on the form data
