@@ -18,6 +18,22 @@ router.get('/bio', async (req, res) => {
   }
 });
 
+router.post('/bio', async (req, res) => {
+  // console.log('connected');
+  try {
+    // Find the bio for the current user
+    const bio = await Bio.findOne({ user: req.user._id });
+
+    // Return the bio data as JSON
+    res.json(bio);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Error getting bio data' });
+  }
+});
+
+
+
 // Route for updating a user's bio
 router.put('/bio', async (req, res) => {
   try {
