@@ -6,42 +6,39 @@ const router = express.Router();
 const User = require('../../models/user');
 
 // Route for displaying the registration page
-router.get('/register', (req, res) => {
-  res.render('register', { title: 'Register' });
-});
-
-// Route for handling user registration.
-router.post('/register', async (req, res) => {
-  try {
-    // Create a new user based on the form data
-    const user = new User({
-      username: req.body.username,
-      password: req.body.password,
-    });
-
-    // Save the user to the database
-    await user.save();
-
-    // Set session variable
-    req.session.userId = user._id;
-
-    // Redirect the user to the bio form
-    res.redirect('/bio');
-  } catch (error) {
-    console.log(error);
-    res.render('register', { title: 'Register', error: error });
-  }
-});
 
 // Route for displaying the login page
 router.get('/login', (req, res) => {
   res.render('login', { title: 'Log In' });
 });
+router.get('/signup', (req, res) => {
+  res.render('signup', { title: 'Log In' });
+});
+
+router.post('/signup', async(req,res) =>{
+  try {
+    const userData = await User.create(
+    { name: req.body.name,
+      email: req.body.email,
+      password: req.body.password}
+    );
+    console.log(userData);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;     
+    });
+    res.redirect('/profile') 
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+})
 
 // Route for handling user login
 router.post('/login', async (req, res) => {
   try {
-    const user = await User.findOne({ username: req.body.username });
+    const user = await User.findOne({ name: req.body.name });
 
     // Check if user exists
     if (!user) {
@@ -65,3 +62,4 @@ router.post('/login', async (req, res) => {
 });
 
 module.exports = router;
+

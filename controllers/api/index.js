@@ -11,6 +11,6 @@ const indBioRoutes = require('./indBio');
 // Mount the route handlers for each resource
 // router.use('/auth', authRoutes);
 router.use('/indbio', indBioRoutes);
-router.use('./users',userRoutes)
+router.use('/users',userRoutes)
 
 module.exports = router;
