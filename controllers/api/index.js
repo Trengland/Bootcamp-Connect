@@ -5,7 +5,7 @@ const userRoutes = require('./userroutes');
 
 // Import the route handlers for each resource
 // const authRoutes = require('../auth');
-const indBioRoutes = require('./indBio');
+const indBioRoutes = require('./indbio');
 
 
 // Mount the route handlers for each resource
