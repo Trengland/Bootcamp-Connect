@@ -25,7 +25,7 @@ console.log('here');
         });
         console.log(response);
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/questions');
         } else {
           alert(response.statusText);
         }
