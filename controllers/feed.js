@@ -9,6 +9,7 @@ router.get("/", async (req, res)=> {
   console.log('feed ready');
     // const peerData = await Bio.findAll(
 
+
     // )
     // console.log(peerData)
     // res.render("feed")
