@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const withAuth = require('../utils/auth');
 
 // Import models here
 const User = require('../models/user');

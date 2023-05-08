@@ -1,29 +1,33 @@
 const router = require('express').Router();
 
 const{ Bio }= require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 
 router.post('/', async(req,res) =>{
-  console.log('ready to post');
-  try {
-    // const bioData = await Bio.create(
-    // { 
-    //   favorite_movies_or_tv_shows:"",
-    //   favorite_songs:"",
-    //   birth_day:"",
-    //   favorite_hobby:"",
-    //   favorite_quote:"",
-    //   github:"",
-    //   user_id: ""
-    // });
-    // console.log(bioData);
 
-    // req.session.save(() => {
-    //   req.session.user_id = userData.id;
-    //   req.session.logged_in = true;     
-    // });
-    res.redirect('/feed')
+  console.log(req.session);
+  try {
+    const bioData = await Bio.create(
+    { 
+      favorite_movies_or_tv_shows: req.body.tvMovies,
+      favorite_songs: req.body.favSong,
+      birth_day: req.body.birthDate,
+      favorite_hobby: req.body.hobbies,
+      favorite_quote: req.body.favQuote,
+      github: req.body.gitHub,
+      linkedin: req.body.linkedIn,
+      user_id : req.session.user_id
+    });
+    console.log(bioData);
+
+    req.session.save(() => {
+      req.session.user_id = bioData.user_id;
+      req.session.logged_in = true;     
+    });
+    res.status(200).json(req.body);
+
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
