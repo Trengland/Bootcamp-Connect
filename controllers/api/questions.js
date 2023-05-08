@@ -6,6 +6,7 @@ const withAuth = require('../../utils/auth');
 
 
 router.post('/', async(req,res) =>{
+
   console.log(req.session);
   try {
     const bioData = await Bio.create(
@@ -25,7 +26,8 @@ router.post('/', async(req,res) =>{
       req.session.user_id = bioData.user_id;
       req.session.logged_in = true;     
     });
-    res.redirect('/feed')
+    res.status(200).json(req.body);
+
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
