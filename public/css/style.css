@@ -19,20 +19,20 @@
 }
 
 header{
-    background-color: rgb(242, 232, 219);
+    background-color: rgb(109, 94, 78);
     padding: 20px;
     text-align: center;
 }
 
 .about{
-    background-color: rgb(153, 194, 190);
+    background-color: rgb(46, 181, 78);
     padding: 20px;
     text-align: center;
     font-family: fantasy;
 }
 
 footer{
-    background-color: rgb(153, 194, 190);
+    background-color: rgb(46, 181, 78);
 }
 
 nav{
