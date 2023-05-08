@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const withAuth = require('../../utils/auth');
 
 // Import your models here
 const Bio = require('../../models/bio');

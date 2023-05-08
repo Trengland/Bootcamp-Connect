@@ -1,12 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
-
 // Import your models here
 const User = require('../../models/user');
-
 // Route for displaying the registration page
-
 // Route for displaying the login page
 router.get('/login', (req, res) => {
   res.render('login', { title: 'Log In' });
@@ -16,20 +12,22 @@ router.get('/signup', (req, res) => {
 });
 
 router.post('/signup', async(req,res) =>{
-  console.log('singed up');
+  console.log(req.body);
+  console.log("++++++++++++++++++");
   try {
     const userData = await User.create(
     { name: req.body.name,
       email: req.body.email,
       password: req.body.password}
     );
-    // console.log(userData);
+    console.log(userData.id);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;     
+      req.session.logged_in = true;  
+      res.status(200).json(userData);  
     });
-    res.redirect('/api/questions') 
+    // res.redirect('/api/questions') 
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
