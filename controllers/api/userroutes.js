@@ -16,19 +16,20 @@ router.get('/signup', (req, res) => {
 });
 
 router.post('/signup', async(req,res) =>{
+  console.log('singed up');
   try {
     const userData = await User.create(
     { name: req.body.name,
       email: req.body.email,
       password: req.body.password}
     );
-    console.log(userData);
+    // console.log(userData);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;     
     });
-    res.redirect('/questions') 
+    res.redirect('/api/questions') 
   } catch (err) {
     console.log(err);
     res.status(400).json(err);

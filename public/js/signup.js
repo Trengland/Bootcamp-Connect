@@ -25,7 +25,7 @@ console.log('here');
         });
         console.log(response);
         if (response.ok) {
-            document.location.replace('/questions');
+            document.location.replace('/api/questions');
         } else {
           alert(response.statusText);
         }

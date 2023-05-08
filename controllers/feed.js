@@ -4,12 +4,13 @@ const{ Bio }= require('../models');
 
 
 
-router.get("/feed", async (req, res)=> {
-    const peerData = await Bio.findAll(
+router.get("/", async (req, res)=> {
+  console.log('feed ready');
+    // const peerData = await Bio.findAll(
 
-    )
-    console.log(peerData)
-    res.render("feed")
+    // )
+    // console.log(peerData)
+    // res.render("feed")
   })
 
 
