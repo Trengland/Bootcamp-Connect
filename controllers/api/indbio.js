@@ -6,37 +6,24 @@ const withAuth = require('../../utils/auth');
 const Bio = require('../../models/bio');
 
 // Route for getting a user's bio
-router.get('/bio', async (req, res) => {
+router.get('/:id', async (req, res) => {
+  console.log(req.params.id);
   try {
     // Find the bio for the current user
-    const bio = await Bio.findOne({ user: req.user._id });
+    const bio = await Bio.findByPk(req.params.id);
 
     // Return the bio data as JSON
-    res.json(bio);
+    console.log(bio);
+    res.render('profiletwo',bio)
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Error getting bio data' });
   }
 });
-
-router.post('/bio', async (req, res) => {
-  // console.log('connected');
-  try {
-    // Find the bio for the current user
-    const bio = await Bio.findOne({ user: req.user._id });
-
-    // Return the bio data as JSON
-    res.json(bio);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: 'Error getting bio data' });
-  }
-});
-
 
 
 // Route for updating a user's bio
-router.put('/bio', async (req, res) => {
+router.put('/bio/:id', async (req, res) => {
   try {
     // Find the bio for the current user
     const bio = await Bio.findOne({ user: req.user._id });
@@ -55,7 +42,7 @@ router.put('/bio', async (req, res) => {
     await bio.save();
 
     // Return the updated bio data as JSON
-    res.json(bio);
+    res.json(bio); 
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Error creating your personal bio' });
@@ -63,7 +50,7 @@ router.put('/bio', async (req, res) => {
 });
 
 // Route for deleting a user's bio
-router.delete('/bio', async (req, res) => {
+router.delete('/bio/:idk', async (req, res) => {
   try {
     // Find the bio for the current user
     const bio = await Bio.findOne({ user: req.user._id });

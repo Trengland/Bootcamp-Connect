@@ -13,17 +13,15 @@ router.get("/", async (req, res)=> {
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['name','id']
         },
       ],
     });
 
     // console.log(bioData)
-    // bioData[0].user.name
     // Serialize data so the template can read it
     const peerBios = bioData.map((bio) => bio.get({ plain: true }));
-    // console.log("+++++++++++++++++++++++++++++++++++++++++++")
-    console.log(peerBios[0])
+    // console.log(peerBios[0])
     // Pass serialized data and session flag into template
     res.render('feed', { 
       peerBios, 
