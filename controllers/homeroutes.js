@@ -59,10 +59,7 @@ router.get("/", async (req, res)=> {
   res.render("homepage")
 })
 
-router.get("/feed", async (req, res)=> {
-  console.log("render homepage")
-  res.render("feed")
-})
+
 
 
 

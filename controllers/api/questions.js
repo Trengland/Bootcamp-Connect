@@ -25,7 +25,7 @@ router.post('/', async(req,res) =>{
       req.session.user_id = bioData.user_id;
       req.session.logged_in = true;     
     });
-    res.status(200).json(req.body);
+    res.redirect('/feed')
   } catch (err) {
     console.log(err);
     res.status(400).json(err);

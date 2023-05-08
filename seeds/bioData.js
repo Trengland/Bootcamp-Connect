@@ -13,7 +13,7 @@ const bioData =[
   },
   {
     user_id: 2,
-    birth_day: 09-25-1984,
+    birth_day: "09-25-1984",
     linkedin: "https://www.linkedin.com/in/tiffany-england-39374b55/",
     github: "https://github.com/Trengland",
     favorite_hobby: "boating, paddleboarding",
@@ -23,7 +23,7 @@ const bioData =[
   },
   {
     user_id: 3,
-    birth_day:  1990-04-18,
+    birth_day: "04-18-1990",
     linkedin: "https://www.linkedin.com/in/brian-williams-7890a0156/",
     github: "https://github.com/briancwilliams18/",
     favorite_hobby: "Volleyball, Video games, Dungeons and dragons",
@@ -33,7 +33,7 @@ const bioData =[
   },
   {
     user_id: 4,
-    birth_day: 11-24-2001,
+    birth_day: "11-24-2001",
     linkedin: "https://www.linkedin.com/in/malachi-gamblin/",
     github: "https://github.com/malachigamblin",
     favorite_hobby: "watching basketball",
@@ -43,7 +43,7 @@ const bioData =[
   },
   {
     user_id: 5,
-    birth_day: 07-19-2002,
+    birth_day: "07-19-2002",
     linkedin: "https://www.linkedin.com/in/melena-grilliot-52a419273/",
     github: "https://github.com/melenagrilliot",
     favorite_hobby: "playing guitar",
