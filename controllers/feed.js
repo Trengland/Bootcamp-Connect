@@ -18,7 +18,7 @@ router.get("/", async (req, res)=> {
       ],
     });
 
-    console.log(bioData[0])
+    console.log(bioData)
     // bioData[0].user.name
     // Serialize data so the template can read it
     // const peerbios = bioData.map((bio) => bio.get({ plain: true }));
