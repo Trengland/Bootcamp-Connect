@@ -41,14 +41,9 @@
 					</div>
         </div>
       </div>
-      <div class="feedcomments">
-    <div class="row">
-      <div class="col postBox">
-        <div class="card">
-          Here is an example of a comment. This is where a comment would show up if someone were to comment on your biography, this is where that comment would show up !
-        </div>
-      </div>
-    </div>
-    </main>
+{{#each peerBios as |bio|}}
+{{> comment-details}}
+{{/each}}
+  </main>
 	<script src="index.js"></script>
   </body>
