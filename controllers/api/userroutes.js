@@ -13,8 +13,7 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', async(req,res) =>{
 
-  console.log(req.body);
-  console.log("++++++++++++++++++");
+  // console.log(req.body);
 
 
   try {
@@ -24,7 +23,7 @@ router.post('/signup', async(req,res) =>{
       password: req.body.password}
     );
 
-    console.log(userData.id);
+    // console.log(userData.id);
 
 
     req.session.save(() => {
@@ -44,7 +43,7 @@ router.post('/signup', async(req,res) =>{
 // Route for handling user login
 router.post('/login', async (req, res) => {
   try {
-    const user = await User.findOne({ name: req.body.name });
+    const user = await User.findOne({ email : req.body.email });
 
     // Check if user exists
     if (!user) {
@@ -60,7 +59,7 @@ router.post('/login', async (req, res) => {
     req.session.userId = user._id;
 
     // Redirect the user to their profile page
-    res.redirect('/profile');
+    res.status()
   } catch (error) {
     console.log(error);
     res.render('login', { title: 'Log In', error: error });

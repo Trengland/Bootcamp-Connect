@@ -14,7 +14,7 @@ router.get('/:id', async (req, res) => {
 
     // Return the bio data as JSON
     console.log(bio);
-    res.render('profiletwo',bio)
+    res.render('peerprofile',bio)
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Error getting bio data' });
