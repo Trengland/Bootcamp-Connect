@@ -1,11 +1,12 @@
 console.log('log in js');
 const loginFormHandler = async (event) => {
   event.preventDefault();
-
+console.log('clicked');
   // Collect values from the login form
-;
-  const email = document.querySelector("#email").value.trim();
+
+  const email = document.querySelector('#email').value.trim()
   const password = document.querySelector("#password").value.trim();
+ 
   if (!email || !password) {
     return;
   }
