@@ -5,9 +5,14 @@ console.log('clicked');
   // Collect values from the login form
 
   const email = document.querySelector('#email').value.trim()
+  const emailText = document.querySelector('#email')
   const password = document.querySelector("#password").value.trim();
+  const passwordText = document.querySelector('#password')
  
   if (!email || !password) {
+    alert('Please enter a valid email or password')
+    emailText.value = ""
+    passwordText.value = ""
     return;
   }
   if (email && password) {
@@ -21,8 +26,10 @@ console.log('clicked');
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       document.location.replace("/feed");
-    } else {
-      alert(response.statusText);
+    } else if (!response.ok) {
+      alert('Please enter a valid email and password');
+      emailText.value = ""
+      passwordText.value = ""
     }
   }
 };
