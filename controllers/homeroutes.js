@@ -7,7 +7,7 @@ const User = require('../models/user');
 const Bio = require('../models/bio');
 
 // Route for displaying the bio form
-router.get('/bio', (req, res) => {
+router.get('/bio',withAuth , (req, res) => {
   res.render('bio', { title: 'Create Your Bio' });
 });
 
@@ -29,30 +29,18 @@ router.post('/bio', async (req, res) => {
       user: user._id,
     });
 
-    // Save the bio to the database
-    await bio.save();
 
     // Redirect the user to the bios page
-    res.redirect('/bios');
+    res.redirect('/bios',{
+      logged_in: req.session.logged_in
+    }
+    );
   } catch (error) {
     console.log(error);
     res.render('bio', { title: 'Create Your Bio', error: error });
   }
 });
 
-// Route for displaying all bios
-router.get('/bios', async (req, res) => {
-  try {
-    // Find all bios in the database
-    const bios = await Bio.find().populate('user');
-
-    // Render the bios page with the bios data
-    res.render('bios', { title: 'Classmate Bios', bios: bios });
-  } catch (error) {
-    console.log(error);
-    res.render('error', { title: 'Error', error: error });
-  }
-});
 
 router.get("/", async (req, res)=> {
   console.log("render homepage")

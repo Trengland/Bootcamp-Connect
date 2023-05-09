@@ -5,7 +5,8 @@ const{ Bio,User }= require('../models');
 
 
 
-router.get("/", async (req, res)=> {
+
+router.get("/",withAuth, async (req, res)=> {
   console.log('feed ready');
   try {
     // Get all projects and JOIN with user data
