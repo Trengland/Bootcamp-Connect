@@ -2,9 +2,6 @@
    
     border: solid thin rgba(242, 232, 219,);
 }
-.home main .row{
-    height: 80vh;
-}
 
 .mainCenter{
     background-image: url("../images/backgrounddots.jpg");
@@ -166,4 +163,10 @@ nav a{
     flex-direction: column;
     justify-content:center;
     align-items: center;
+  }
+
+  #bio {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
   }
