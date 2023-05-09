@@ -20,12 +20,8 @@ router.get('/:id',withAuth, async (req, res) => {
     });
     const bio = bioData.get({ plain: true });
     // Return the bio data as JSON
-    // console.log(bio);
-    res.render('peerprofile',
-    {bio,
-      logged_in: req.session.logged_in,
-      id_user : req.session.user_id
-    })
+    console.log(bio);
+    res.render('peerprofile',bio)
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Error getting bio data' });
@@ -34,7 +30,7 @@ router.get('/:id',withAuth, async (req, res) => {
 
 
 // Route for updating a user's bio
-router.put('/:id',withAuth, async (req, res) => {
+router.put('/bio/:id', async (req, res) => {
   try {
     // Find the bio for the current user
     const bio = await Bio.findOne({ user: req.user._id });
@@ -59,7 +55,7 @@ router.put('/:id',withAuth, async (req, res) => {
 });
 
 // Route for deleting a user's bio
-router.delete('/:id',withAuth, async (req, res) => {
+router.delete('/bio/:idk', async (req, res) => {
   try {
     // Find the bio for the current user
     const bio = await Bio.findOne({ user: req.user._id });
