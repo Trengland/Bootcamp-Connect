@@ -17,7 +17,10 @@
     align-items: center;
 }
 
-
+header img {
+    width: 100%;
+    height: 100%;
+}
 
 .mainCenter > div{
     display: flex;
@@ -67,11 +70,22 @@ nav a{
 
 }
 
-#peernavbar {
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(46, 181, 78);
+    padding: 20px;
+  }
+
+
+  /* // not working due to MIME error in console */
+#navbarNav {
     background-color: #2eb54e;
     color: white;
   }
-  
+
 
 
 .profile{
