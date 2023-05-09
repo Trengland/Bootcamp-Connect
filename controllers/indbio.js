@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const withAuth = require('../../utils/auth');
+const withAuth = require('../utils/auth');
 
 // Import your models here
-const Bio = require('../../models/bio');
+const Bio = require('../models/bio');
 
 // Route for getting a user's bio
 router.get('/:id',withAuth, async (req, res) => {
@@ -26,7 +26,7 @@ router.get('/:id',withAuth, async (req, res) => {
 
 
 // Route for updating a user's bio
-router.put('/bio/:id',withAuth, async (req, res) => {
+router.put('/:id',withAuth, async (req, res) => {
   try {
     // Find the bio for the current user
     const bio = await Bio.findOne({ user: req.user._id });
@@ -51,7 +51,7 @@ router.put('/bio/:id',withAuth, async (req, res) => {
 });
 
 // Route for deleting a user's bio
-router.delete('/bio/:id',withAuth, async (req, res) => {
+router.delete('/:id',withAuth, async (req, res) => {
   try {
     // Find the bio for the current user
     const bio = await Bio.findOne({ user: req.user._id });
