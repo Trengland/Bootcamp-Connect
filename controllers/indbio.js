@@ -7,21 +7,20 @@ const{ Bio, User }= require('../models');
 
 // Route for getting a user's bio
 router.get('/:id',withAuth, async (req, res) => {
-  console.log(req.session.user_id);
-  console.log('==================');
+  // console.log(req);
   try {
     // Find the bio for the current user
-    const bioData = await Bio.findByPk(req.params.id,{
+    const bioData = await Bio.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name','id']
+          attributes: ['name'],
         },
       ],
     });
     const bio = bioData.get({ plain: true });
     // Return the bio data as JSON
-    console.log(bio);
+    // console.log(bio);
     res.render('peerprofile',
     {bio,
       logged_in: req.session.logged_in,
@@ -52,7 +51,7 @@ router.put('/:id',withAuth, async (req, res) => {
 
 
     // Return the updated bio data as JSON
-    res.json(bio); 
+    // res.json(bio); 
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Error creating your personal bio' });
