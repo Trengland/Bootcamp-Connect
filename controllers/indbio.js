@@ -21,7 +21,10 @@ router.get('/:id',withAuth, async (req, res) => {
     const bio = bioData.get({ plain: true });
     // Return the bio data as JSON
     console.log(bio);
-    res.render('peerprofile',bio)
+    res.render('peerprofile',{bio,
+      logged_in: req.session.logged_in,
+      id_user: req.session.user_id
+    })
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Error getting bio data' });
