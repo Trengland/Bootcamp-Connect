@@ -10,9 +10,10 @@ router.get('/:id',withAuth, async (req, res) => {
   console.log(req.session);
   try {
     // Find the bio for the current user
-    const bio = await Bio.findByPk(req.params.id);
+    const bioData = await Bio.findByPk(req.params.id);
 
     // Return the bio data as JSON
+    const bio = bioData.get({ plain: true });
     console.log(bio);
     res.render('userprofile',
     {bio,

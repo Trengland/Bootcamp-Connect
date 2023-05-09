@@ -3,15 +3,22 @@ const router = express.Router();
 const withAuth = require('../utils/auth');
 
 // Import your models here
-const Bio = require('../models/bio');
+const{ Bio, User }= require('../models');
 
 // Route for getting a user's bio
 router.get('/:id',withAuth, async (req, res) => {
   console.log(req.params.id);
   try {
     // Find the bio for the current user
-    const bio = await Bio.findByPk(req.params.id);
-
+    const bioData = await Bio.findByPk(req.params.id,{
+      include: [
+        {
+          model: User,
+          attributes: ['name','id']
+        },
+      ],
+    });
+    const bio = bioData.get({ plain: true });
     // Return the bio data as JSON
     console.log(bio);
     res.render('peerprofile',
