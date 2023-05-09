@@ -19,32 +19,49 @@
         </div>
       </div>
     </nav>
-    <main>
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col">
-                    <img src="https://picsum.photos/200" class="img-thumbnail profile" alt="...">
-                </div>
-              <br>
-              <br>
-              <br>
-                {{!-- <div class="col">
-                    <form action="">
-                        <fieldset>
-                        <textarea name="" class="form-control mb-3" id="" cols="30" rows="10"></textarea>
-                    </fieldset>
-                     </form>
-                </div> --}}
+   
+    <nav id="peernavbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    {{!-- <a class="navbar-brand" href="#">Bootcamp Connect</a> 
+    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button> --}}
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="/userbio/:id">My Bio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/feed">Classmate Bios</a>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="log-out">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Leave A Comment" aria-label="Make A Comment" aria-describedby="button-addon2">
-                  <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>
-                </div>
-					</div>
-        </div>
+
+<main id="bio">
+  <div class="card mb-3" style="max-width: 1000px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://picsum.photos/400/400" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{bio.user.name}}</h5>
+        <p class="card-text text-body-secondary">{{favorite_quote}}</p>
+        <p class="card-text text-body-secondary">{{bio.birth_day}}</p>
+        <p class="card-text text-body-secondary">{{bio.favorite_movies_or_tv_shows}}</p>
+        <p class="card-text text-body-secondary">{{bio.favorite_songs}}</p>
+        <p class="card-text text-body-secondary">{{bio.favorite_hobby}}</p>
+        <p class="card-text text-body-secondary">{{bio.github}}</p>
+        <p class="card-text text-body-secondary">{{bio.linkedin}}</p>
       </div>
-{{#each peerBios as |bio|}}
-{{> comment-details}}
-{{/each}}
+    </div>
+  </div>
+</div>
   </main>
   <script src="/js/logout.js"></script>
