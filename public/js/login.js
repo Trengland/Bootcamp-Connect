@@ -11,13 +11,12 @@ const loginFormHandler = async (event) => {
   }
   if (email && password) {
     // Send a POST request to the API endpoint
-    console.log(email + " " + password);
     const response = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
-
+    console.log(response);
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       document.location.replace("/feed");
@@ -28,5 +27,5 @@ const loginFormHandler = async (event) => {
 };
 
 document
-  .querySelector(".login-form")
-  .addEventListener("submit", loginFormHandler);
+  .querySelector(".log-in")
+  .addEventListener("click", loginFormHandler);
