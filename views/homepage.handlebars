@@ -1,12 +1,14 @@
 {{!-- This template uses Handlebars syntax to conditionally display different content depending on whether the user is logged in or not --}}
-<div class="about">
-	Bootcamp Connect is a virtual site made to help you connect with your bootcamp classmates!
+<div id="intro" class="about">
+	Welcome to Bootcamp Connect!
+	A place to quickly get to know your classmates and stay connected during short online courses.
 </div>
-
 <main class="mainCenter">
-	<div>
-		<a href="/api/users/login" class="btn btn-primary">Login</a>
-		<a href="/api/users/signup" class="btn btn-primary">Create Account</a>
+	<div id="welcome-message">
+	{{!-- <h3 id="getstarted">Let's Get Started</h3> --}}
 	</div>
-	 
+	<div>
+		<a href="/api/users/login" id="loginbutton" class="btn btn-primary">Login</a>
+		<a href="/api/users/signup" id="createaccountbutton" class="btn btn-primary">Create Account</a>
+	</div>
 </main>

@@ -7,15 +7,35 @@
 }
 
 .mainCenter{
+    background-image: url("../images/backgrounddots.jpg");
+    background-size: cover;
+    background-position: center;
     height: 80vh;;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+
+
 .mainCenter > div{
     display: flex;
     flex-direction: column;
-    gap: 20px
+    gap: 30px
+}
+
+/* #welcome-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+#getstarted {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header{
@@ -47,6 +67,13 @@ nav a{
 
 }
 
+#peernavbar {
+    background-color: #2eb54e;
+    color: white;
+  }
+  
+
+
 .profile{
     max-width: 100px;
 }
@@ -75,4 +102,54 @@ nav a{
   .scrollable {
     height: 800px;
     overflow-y: scroll;
+  }
+
+  #loginbutton {
+  background-color: #6d5e81; /* Set background color */
+  color: white; /* Set text color */
+  padding: 15px 32px; /* Set padding */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Add cursor on hover */
+  box-shadow: 0 0 14px #4CAF50; /* Add glowing effect */
+  width: 150%;
+  cursor: pointer;
+  }
+
+  #createaccountbutton {
+    background-color: #6d5e81; /* Set background color */
+    color: white; /* Set text color */
+    padding: 15px 32px; /* Set padding */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Add cursor on hover */
+    box-shadow: 0 0 14px #4CAF50; /* Add glowing effect */
+    width: 150%;
+    cursor: pointer;
+  }
+
+  #loginbutton:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-weight: bold;
+  }
+
+  #createaccountbutton:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-weight: bold;
+  }
+
+
+  #intro {
+    color: white;
+    font-size: 20px;  
+    font-family: style;
+  }
+
+  #logo {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
   }
