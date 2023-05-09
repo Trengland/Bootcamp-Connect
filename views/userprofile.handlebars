@@ -1,26 +1,4 @@
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        {{!-- <a class="navbar-brand" href="#">Bootcamp Connect</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button> --}}
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/userbio/:id">My Bio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/feed">Feed</a>
-            </li>
-            <li class="nav-item">
-              <button class="nav-link" id="log-out">Logout</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-   
-    <nav id="peernavbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <nav id="peernavbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     {{!-- <a class="navbar-brand" href="#">Bootcamp Connect</a> 
     <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
@@ -52,7 +30,7 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{bio.user.name}}</h5>
-        <p class="card-text text-body-secondary">{{favorite_quote}}</p>
+        <p class="card-text text-body-secondary">{{bio.favorite_quote}}</p>
         <p class="card-text text-body-secondary">{{bio.birth_day}}</p>
         <p class="card-text text-body-secondary">{{bio.favorite_movies_or_tv_shows}}</p>
         <p class="card-text text-body-secondary">{{bio.favorite_songs}}</p>
