@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 const Bio = require('../../models/bio');
 
 // Route for getting a user's bio
-router.get('/:id', async (req, res) => {
+router.get('/:id',withAuth, async (req, res) => {
   console.log(req.params.id);
   try {
     // Find the bio for the current user
@@ -14,7 +14,10 @@ router.get('/:id', async (req, res) => {
 
     // Return the bio data as JSON
     console.log(bio);
-    res.render('peerprofile',bio)
+    res.render('peerprofile',
+    {bio,
+      logged_in: req.session.logged_in
+    })
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Error getting bio data' });
@@ -23,7 +26,7 @@ router.get('/:id', async (req, res) => {
 
 
 // Route for updating a user's bio
-router.put('/bio/:id', async (req, res) => {
+router.put('/bio/:id',withAuth, async (req, res) => {
   try {
     // Find the bio for the current user
     const bio = await Bio.findOne({ user: req.user._id });
@@ -38,8 +41,6 @@ router.put('/bio/:id', async (req, res) => {
     bio.favorite_songs = req.body.favorite_songs;
     bio.favorite_hobby = req.body.favorite_hobby;
 
-    // Save the updated bio to the database
-    await bio.save();
 
     // Return the updated bio data as JSON
     res.json(bio); 
@@ -50,7 +51,7 @@ router.put('/bio/:id', async (req, res) => {
 });
 
 // Route for deleting a user's bio
-router.delete('/bio/:idk', async (req, res) => {
+router.delete('/bio/:id',withAuth, async (req, res) => {
   try {
     // Find the bio for the current user
     const bio = await Bio.findOne({ user: req.user._id });

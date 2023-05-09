@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 
 
 
-router.post('/', async(req,res) =>{
+router.post('/',withAuth , async(req,res) =>{
 
   console.log(req.session);
   try {
@@ -21,11 +21,6 @@ router.post('/', async(req,res) =>{
       user_id : req.session.user_id
     });
     console.log(bioData);
-
-    req.session.save(() => {
-      req.session.user_id = bioData.user_id;
-      req.session.logged_in = true;     
-    });
     res.status(200).json(req.body);
 
   } catch (err) {
@@ -34,15 +29,14 @@ router.post('/', async(req,res) =>{
   }
 });
 
-router.get('/', async(req,res) =>{
+router.get('/',withAuth, async(req,res) =>{
   // console.log('ready to redner questions');
   try {
 
-    // req.session.save(() => {
-    //   req.session.user_id = userData.id;
-    //   req.session.logged_in = true;     
-    // });
-    res.render('questions')
+    res.render('questions',{
+      logged_in: req.session.logged_in
+    }
+    )
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
