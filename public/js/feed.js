@@ -6,13 +6,13 @@ viewProfileBtns.forEach((viewProfileBtn) => {
         event.preventDefault();
         let peerId = event.target.dataset.userId
         console.log(peerId);
-        const response = await fetch(`/api/indbio/${peerId}`, {
+        const response = await fetch(`/indbio/${peerId}`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' },
           });   
           console.log(response);
           if (response.ok) {
-              document.location.replace(`/api/indbio/${peerId}`);
+              document.location.replace(`/indbio/${peerId}`);
           } else {
             alert(response.statusText);
           }
