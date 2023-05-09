@@ -8,16 +8,12 @@ Brian Williams\
 Tiffany England
 
 
-## Screen Recording:
-TBD
-
-
 ## Image of application walk-through:
 TBD
 
 
 ## LIVE URL:
-TBD
+![image](https://github.com/Trengland/Bootcamp-Connect/assets/122329399/9a4df9a6-64a6-4753-a518-682473e8198f)
 
 
 ## Table of Contents
@@ -27,11 +23,14 @@ TBD
 * [Installation](#installation)
 * [Tests](#tests)
 * [Build](#build)
+* [Future Enhancements](#future enhancements)
 * [License](#license)
 
 
 ## Description
-TBD
+Our mobile-friendly website is designed to help bootcamp classmates get to know each other more efficiently at the beginning of class.\
+A User creates a personal bio upon first login, and this gives them access to other classmates bios - favorite shows, movies, quotes, hobbies, zodiac sign, etc.\
+
 
 
 ## Usage
@@ -90,6 +89,9 @@ handlebars.js\
 MySQL Database\
 SQL ORM
 
+## Future Enhancements
+Comment section - to make personal comments on other users bios.\
+Avatar creation - for each individual user.
 
 
 ## License
