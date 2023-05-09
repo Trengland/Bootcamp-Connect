@@ -5,9 +5,7 @@ const withAuth = require('../../utils/auth');
 
 
 
-router.post('/',withAuth , async(req,res) =>{
-
-  console.log(req.session);
+router.post('/', async(req,res) =>{
   try {
     const bioData = await Bio.create(
     { 
@@ -20,9 +18,7 @@ router.post('/',withAuth , async(req,res) =>{
       linkedin: req.body.linkedIn,
       user_id : req.session.user_id
     });
-    console.log(bioData);
-    res.status(200).json(req.body);
-
+    res.status(200).json(bioData);
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -30,7 +26,6 @@ router.post('/',withAuth , async(req,res) =>{
 });
 
 router.get('/',withAuth, async(req,res) =>{
-  // console.log('ready to redner questions');
   try {
 
     res.render('questions',{

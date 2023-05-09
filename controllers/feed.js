@@ -7,9 +7,8 @@ const{ Bio,User }= require('../models');
 
 
 router.get("/",withAuth, async (req, res)=> {
-  console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
   console.log(req.session.user_id);
-  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');
+ 
   try {
     // Get all projects and JOIN with user data
     const bioData = await Bio.findAll({
@@ -21,10 +20,8 @@ router.get("/",withAuth, async (req, res)=> {
       ],
     });
 
-    // console.log(bioData)
     // Serialize data so the template can read it
     const peerBios = bioData.map((bio) => bio.get({ plain: true }));
-    // console.log(peerBios[0])
     // Pass serialized data and session flag into template
     res.render('feed', { 
       peerBios, 
