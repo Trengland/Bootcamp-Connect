@@ -47,12 +47,16 @@ router.post('/login', async (req, res) => {
 
     // Check if user exists
     if (!user) {
-      throw new Error('User not found');
+      res.status(400).json({ message: 'No user account found' });
+      return;
+      /*throw new Error('Incorrect password'); */
     }
 
     // Check if password is correct
     if (user.password !== req.body.password) {
-      throw new Error('Incorrect password');
+       res.status(400).json({ message: 'Password incorrect' });
+      return;
+      /*throw new Error('Incorrect password'); */
     }
 
     // Set session variable
