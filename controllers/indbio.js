@@ -7,7 +7,8 @@ const{ Bio, User }= require('../models');
 
 // Route for getting a user's bio
 router.get('/:id',withAuth, async (req, res) => {
-  console.log(req.params.id);
+  console.log(req.session.user_id);
+  console.log('==================');
   try {
     // Find the bio for the current user
     const bioData = await Bio.findByPk(req.params.id,{
@@ -23,7 +24,8 @@ router.get('/:id',withAuth, async (req, res) => {
     console.log(bio);
     res.render('peerprofile',
     {bio,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      id_user : req.session.user_id
     })
   } catch (error) {
     console.log(error);

@@ -7,7 +7,9 @@ const{ Bio,User }= require('../models');
 
 
 router.get("/",withAuth, async (req, res)=> {
-  console.log('feed ready');
+  console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+  console.log(req.session.user_id);
+  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');
   try {
     // Get all projects and JOIN with user data
     const bioData = await Bio.findAll({
@@ -26,7 +28,8 @@ router.get("/",withAuth, async (req, res)=> {
     // Pass serialized data and session flag into template
     res.render('feed', { 
       peerBios, 
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in,
+      id_user: req.session.user_id
     });
   } catch (err) {
     console.log(err)
