@@ -34,8 +34,10 @@ A User creates a personal bio upon first login, and this gives them access to ot
 
 
 ## Usage
-Homepage - \
-2nd Page? - 
+Homepage - Create a new account in order to view classmates BIO's, or log in if you've already done so.\
+Peers BIO's Page - In a gallery setting, view a small peak at other classmates BIO's and click into each individual to learn more and leave a comment.\
+Peer's Indivdual BIO's - The full bio is presented, along with images, contact info, social media links, and a section to leave comments about things you find interesting in their bio.\
+Personal BIO page - where you can view and update your own personal bio anytime you want and/or as life changes.\
 
 
 ## Contributors
@@ -87,11 +89,19 @@ express.js\
 node.js\
 handlebars.js\
 MySQL Database\
-SQL ORM
+SQL ORM\
+Bootstrap\
+ChatGPT
+
 
 ## Enhancements
 Comment section - to make personal comments on other users bios.\
-Avatar creation - for each individual user.
+Avatar creation - for each individual user.\
+Ability to generate similarities you have with other users.\
+Additional infroamtion gathered for the bio.\
+Ability to create your own Bio questions.\
+Add a photo section to each bio with a photo limit of 5 or 10.\
+
 
 
 ## License
