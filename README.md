@@ -23,7 +23,7 @@ https://bootcamp-connect-5.herokuapp.com/
 * [Installation](#installation)
 * [Tests](#tests)
 * [Build](#build)
-* [Future Enhancements](#future enhancements)
+* [Enhancements](#enhancements)
 * [License](#license)
 
 
@@ -89,7 +89,7 @@ handlebars.js\
 MySQL Database\
 SQL ORM
 
-## Future Enhancements
+## Enhancements
 Comment section - to make personal comments on other users bios.\
 Avatar creation - for each individual user.
 
